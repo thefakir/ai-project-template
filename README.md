@@ -1,40 +1,42 @@
-# [Project Name]
+# AI Project Template — SDD Starter
 
-[One sentence: what this project is.]
+Reusable, technology-neutral foundation for AI-assisted, spec-driven software development.
 
-## Current status
+## Create a new project
+1. On GitHub click **Use this template** (the repository owner must enable the Template repository setting first).
+2. Clone your new repository and open it in Claude Code.
+3. Run `/initialize-project [brief project idea]`.
+4. Review generated `docs/PRODUCT.md`, `docs/ROADMAP.md` and Draft SPEC-001.
+5. Use `/review-spec SPEC-001`; approve and set Ready only when satisfied.
+6. Run `/implement-spec SPEC-001`, validate, then `/close-spec SPEC-001`.
 
-[One or two lines. Keep it current.]
+GitHub CLI alternative (once template status is enabled):
+```bash
+gh repo create OWNER/NEW_PROJECT --private --template thefakir/ai-project-template --clone
+```
+
+## Commands
+`/initialize-project` · `/create-spec` · `/review-spec` · `/implement-spec` · `/close-spec`
 
 ## Source of truth
+- `CLAUDE.md`: AI rules, authority order and approval gates
+- `docs/PRODUCT.md`: validated problem, users, hypotheses and scope
+- `docs/ROADMAP.md`: active work and nonbinding candidates
+- `docs/ARCHITECTURE.md`: accepted/implemented technology only
+- `docs/decisions/`: architecture decision records
+- `docs/specs/`: bounded specifications and evidence-based outcomes
+- `docs/design/SCREENS.md`: optional UI inventory
+- `docs/GLOSSARY.md`: domain terminology
+- `docs/METHODOLOGY.md`: how to apply the methodology
+- `SDD_VERSION` and `CHANGELOG.md`: template baseline and changes
 
-The repository is the source of truth for product, architecture, specs, and implementation decisions.
+## Ground rules
+This repository is a **template**, not a preselected application stack. Specs start Draft, architectural decisions require owner approval, and completion requires evidence. No feature implementation happens just because a roadmap proposes it.
 
-- `docs/PRODUCT.md`: problem, hypotheses, users, scope, principles, open questions
-- `docs/ARCHITECTURE.md`: current and explicitly accepted technical truth
-- `docs/ROADMAP.md`: active work plus likely next and later candidates
-- `docs/decisions/`: accepted architecture decision records (ADRs)
-- `docs/specs/`: bounded specs, each with acceptance criteria
-- `docs/design/SCREENS.md`: designed screens, flows, and role visibility
-- `docs/GLOSSARY.md`: domain terms and open naming decisions
-- `CLAUDE.md`: rules for AI-assisted development in this repository
+A new repository created from this template is a **copy**, not a live-linked derivative. Later template improvements must be integrated through reviewed changes. Nothing updates older projects automatically.
 
-Design workspace: [link to the design file, if any]
+## Existing projects
+Do not overwrite their product-specific documentation or accepted decisions when adopting template improvements. Bring over process updates selectively.
 
-Chat conversations are useful for discovery, challenge, and review. Decisions that affect implementation must be reflected in the repository before they become authoritative.
-
-## Using this template for a new project
-
-1. Create a new repository from this template, or copy its files into an empty repository.
-2. Search for `[` in all files and fill in every placeholder. Delete sections that do not apply.
-3. In `CLAUDE.md`, set the language policy and, once a project exists, the commands.
-4. Write `docs/PRODUCT.md` first: problem, target user, and hypotheses. Mark everything unvalidated as a hypothesis.
-5. Add a design link and fill `docs/design/SCREENS.md` only if the project has a UI. Otherwise delete it and its references.
-6. Write the first spec from `docs/specs/_TEMPLATE.md` and set it as the active work in `docs/ROADMAP.md`.
-7. Record architecture choices as ADRs only after a human has accepted them.
-
-## How the documents relate
-
-When sources conflict, the authority order in `CLAUDE.md` decides. In short: the current instruction from the human, then the active spec, then accepted ADRs and architecture, then product documentation, then the roadmap, then the existing implementation.
-
-Each document has one job. Do not turn any of them into a project diary.
+## Status
+Generic template ready for project-specific initialization. No application code is included.

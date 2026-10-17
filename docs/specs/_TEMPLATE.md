@@ -2,54 +2,38 @@
 
 - Status: Draft | Ready | In progress | Done | Superseded
 - Type: Proof of concept | Feature | Experiment
-- Related design: Design screens or `docs/design/SCREENS.md` entries, if any
+- Related decisions/design:
 
 ## Goal
+One bounded and measurable outcome.
 
-What this spec validates or delivers, in one or two sentences.
+## User or system flow
+Numbered observable steps, including failure/exception cases when relevant.
 
-## User flow
-
-Numbered steps from the user's point of view.
-
-## Fields / data
-
-Each field: name, required or optional, type, validation rules.
+## Data and rules
+Fields, validation, invariants, business rules and notable edge cases.
 
 ## Acceptance criteria
-
-Verifiable statements. Each one must be checkable by manual test or automated validation.
-
-- ...
+Numbered independently verifiable requirements. Record external/manual verification explicitly.
 
 ## Out of scope
-
-Things that might look related but are not part of this spec.
-
-- ...
+Adjacent work expressly excluded.
 
 ## Technical constraints
-
-- ...
+Only accepted decisions and necessary interfaces. Avoid speculative commitments.
 
 ## Open questions
+Blocking issues before Ready.
 
-Ambiguities that must be resolved before or during implementation.
-
-- ...
+## Implementation approach
+Proportional plan if substantial work; defer until Ready when details are unknown.
 
 ## Outcome
-
-Fill this when closing the spec, before setting the status to Done.
-
-- Criteria verified, and how:
-- Limitations discovered that affect the next step:
+- Criteria verified and evidence:
+- Validation performed:
+- Limitations:
 - Follow-up candidates:
+- Owner acceptance:
 
 ## Definition of done
-
-The spec is done only when:
-
-1. Every acceptance criterion has been verified.
-2. The final diff has been reviewed.
-3. The Outcome section is filled in.
+Each criterion checked, relevant tests run, diff reviewed, evidence and Outcome recorded, human acceptance obtained.

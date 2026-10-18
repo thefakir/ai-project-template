@@ -2,6 +2,8 @@
 
 Reusable, technology-neutral foundation for AI-assisted, spec-driven software development.
 
+**Start here:** [Step-by-step guide to the five skills](docs/GETTING_STARTED.md).
+
 ## Create a new project
 1. On GitHub click **Use this template** (the repository owner must enable the Template repository setting first).
 2. Clone your new repository and open it in Claude Code.

@@ -62,7 +62,7 @@ Test the result yourself where needed, then:
 
 The skill checks evidence, records Outcome and marks Done only after owner acceptance. If verification remains missing, leave In progress.
 
-Every spec lives on its own `feature/SPEC-XXX-<slug>` branch from `develop`. When the work is verified, Claude pushes the branch and opens a PR to `develop`; you review and merge it. Your merge is the approval.
+Each spec travels in two PRs to `develop`. First `feature/SPEC-XXX-spec` with the document: you approve it, its status becomes Ready and you merge it. Then `/implement-spec SPEC-XXX` updates `develop`, creates `feature/SPEC-XXX-impl` and, when the work is verified, opens the implementation PR. Your merge is the approval.
 
 ## 6. Continue the next development slice
 

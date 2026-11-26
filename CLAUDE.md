@@ -30,7 +30,7 @@ Choose simple solutions. Avoid speculative abstractions, dependencies and infras
 Every change reaches the default branches through a pull request that the owner reviews and merges. See `docs/GIT_WORKFLOW.md`.
 - `main` (or `master`): released, owner-approved state. Only receives merges from `release/*` or `hotfix/*`.
 - `develop`: integration branch and PR target for all normal work.
-- `feature/SPEC-XXX-<slug>`: one branch per spec, created from `develop`, covering its Draft, implementation and Outcome. Non-spec changes (process, docs, chores) use `feature/<slug>`.
+- Each spec travels in two PRs to `develop`: `feature/SPEC-XXX-spec` (the document; the owner approves it, its status becomes Ready and the owner merges) and then `feature/SPEC-XXX-impl` (created from the updated `develop` only when the spec there is Ready; carries implementation, evidence and Outcome). Non-spec changes (process, docs, chores) use `feature/<slug>`.
 - `release/<version>` and `hotfix/<slug>`: only when the owner asks.
 - Never commit directly to `main` or `develop`, never merge a PR, never force-push a shared branch, never delete branches without instruction.
 - Commit on the feature branch in small Conventional Commits that reference the SPEC (`feat(SPEC-004): ...`). Push the feature branch and open a PR to `develop` when the work is verified, using `.github/pull_request_template.md`. If the project's own rules are stricter (for example, commit only after the owner tests), follow them.

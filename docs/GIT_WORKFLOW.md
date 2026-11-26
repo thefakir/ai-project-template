@@ -8,20 +8,28 @@ Nothing reaches `develop` or `main` without a pull request that the owner review
 |---|---|---|---|
 | `main` (or `master`) | — | — | Released, owner-approved state. |
 | `develop` | `main` | — | Integration branch; default PR target. |
-| `feature/SPEC-XXX-<slug>` | `develop` | `develop` | One spec: Draft, implementation and Outcome. |
+| `feature/SPEC-XXX-spec` | `develop` | `develop` | The spec document only: Draft until the owner approves it, merged once Ready. |
+| `feature/SPEC-XXX-impl` | `develop` | `develop` | Implementation of a Ready spec, its evidence and Outcome. |
 | `feature/<slug>` | `develop` | `develop` | Process, documentation or chores without a spec. |
 | `release/<version>` | `develop` | `main` and `develop` | Promote a tested set of work (owner request only). |
 | `hotfix/<slug>` | `main` | `main` and `develop` | Urgent fix to released state (owner request only). |
 
 ## Life of a spec
 
-1. `git switch develop && git pull` then `git switch -c feature/SPEC-XXX-<slug>`.
-2. `/create-spec` writes the Draft on that branch. The owner may review it in a draft PR or in conversation.
-3. Owner approves; status Ready. `/implement-spec` commits on the same branch.
-4. Checks pass and evidence is recorded; push the branch and open a PR to `develop` with the PR template.
-5. After owner acceptance, `/close-spec` records Outcome and sets Done on the same branch, so the PR carries the closing documentation.
-6. The owner reviews and merges. The merge is the final approval: until then the spec is awaiting merge, not finished.
-7. Delete the feature branch only after the merge, and only if the owner wants it deleted.
+A spec travels in two pull requests: first the document, then the implementation.
+
+**Spec PR**
+1. From an up-to-date `develop`, create `feature/SPEC-XXX-spec`. The Draft is written there (with `/create-spec` or drafted in conversation with the owner, sketches included).
+2. Open the PR to `develop` (it can stay a draft PR while questions are open).
+3. The owner approves the spec explicitly; its status changes to Ready on the same branch.
+4. The owner merges. From now on the Ready spec is in `develop`.
+
+**Implementation PR**
+5. The agent updates `develop` (`git switch develop && git pull`) and receives the spec number from the owner (`/implement-spec SPEC-XXX`). It verifies the spec is Ready in `develop`; a Draft, or a spec that only exists on an unmerged branch, is not implemented.
+6. It creates `feature/SPEC-XXX-impl` from `develop`, sets the status to In progress and implements.
+7. When verified, it pushes the branch and opens a PR to `develop` with the PR template. After owner acceptance, `/close-spec` records Outcome and Done on that branch.
+8. The owner reviews and merges. Until then the spec is awaiting merge, not finished. If the implementation was merged with manual checks still pending, they are closed later on `feature/SPEC-XXX-close`.
+9. Delete branches only after their merge, and only if the owner wants them deleted.
 
 ## Commits
 

@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.3.0 — 2026-11-26
+- Each spec now travels in two PRs to `develop`: `feature/SPEC-XXX-spec` (the document, merged once the owner approves it as Ready) and `feature/SPEC-XXX-impl` (the implementation, created from the updated `develop`).
+- `/implement-spec` updates `develop` first and refuses specs that are not Ready there; `/close-spec` closes on the implementation branch or on `feature/SPEC-XXX-close`.
+
 ## 1.2.0 — 2026-11-25
 - Added Git Flow workflow with owner-approved pull requests (`docs/GIT_WORKFLOW.md`).
 - Added `.github/pull_request_template.md` mapping PRs to spec acceptance criteria.

@@ -7,10 +7,11 @@ Reusable, technology-neutral foundation for AI-assisted, spec-driven software de
 ## Create a new project
 1. On GitHub click **Use this template** (the repository owner must enable the Template repository setting first).
 2. Clone your new repository and open it in Claude Code.
-3. Run `/initialize-project [brief project idea]`.
-4. Review generated `docs/PRODUCT.md`, `docs/ROADMAP.md` and Draft SPEC-001.
-5. Use `/review-spec SPEC-001`; approve and set Ready only when satisfied.
-6. Run `/implement-spec SPEC-001`, validate, then `/close-spec SPEC-001`.
+3. Create `develop` from the default branch and make it the default (see `docs/GIT_WORKFLOW.md`).
+4. Run `/initialize-project [brief project idea]`.
+5. Review generated `docs/PRODUCT.md`, `docs/ROADMAP.md` and Draft SPEC-001.
+6. Use `/review-spec SPEC-001`; approve and set Ready only when satisfied.
+7. Run `/implement-spec SPEC-001`, validate, open the PR to `develop`, merge it yourself, then `/close-spec SPEC-001`.
 
 GitHub CLI alternative (once template status is enabled):
 ```bash
@@ -30,6 +31,7 @@ gh repo create OWNER/NEW_PROJECT --private --template thefakir/ai-project-templa
 - `docs/design/SCREENS.md`: optional UI inventory
 - `docs/GLOSSARY.md`: domain terminology
 - `docs/METHODOLOGY.md`: how to apply the methodology
+- `docs/GIT_WORKFLOW.md`: Git Flow branches, commits and owner-approved PRs
 - `SDD_VERSION` and `CHANGELOG.md`: template baseline and changes
 
 ## Ground rules

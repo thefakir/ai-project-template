@@ -16,6 +16,9 @@ Review product documentation and the first Draft SPEC before implementing.
 - `/implement-spec`: execute one approved spec.
 - `/close-spec`: confirm evidence and close after human acceptance.
 
+## Version control
+Git Flow with owner-approved pull requests: one `feature/SPEC-XXX-<slug>` branch per spec from `develop`, PR to `develop`, owner merges; `main` only via release/hotfix. Details in `docs/GIT_WORKFLOW.md`.
+
 ## Authority and architecture
 Use the hierarchy in CLAUDE.md. An active spec limits implementation scope. An ADR only becomes Accepted with explicit owner approval. Roadmap ideas are not commitments.
 

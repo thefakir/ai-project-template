@@ -15,6 +15,13 @@ cd NewProject
 
 Do not run these commands inside another existing repository.
 
+Then set up Git Flow once (see `docs/GIT_WORKFLOW.md`):
+
+```bash
+git switch -c develop && git push -u origin develop
+gh repo edit --default-branch develop
+```
+
 ## 2. Open Claude Code
 
 Open Claude Code in the new project's root so it can read `CLAUDE.md`, `docs/` and `.claude/skills/`.
@@ -54,6 +61,8 @@ Test the result yourself where needed, then:
 ```
 
 The skill checks evidence, records Outcome and marks Done only after owner acceptance. If verification remains missing, leave In progress.
+
+Every spec lives on its own `feature/SPEC-XXX-<slug>` branch from `develop`. When the work is verified, Claude pushes the branch and opens a PR to `develop`; you review and merge it. Your merge is the approval.
 
 ## 6. Continue the next development slice
 
